@@ -16,6 +16,7 @@ router.get("/", (req, res) => {
 // @access Public
 router.post("/", (req, res) => {
   const newShift = new Shift({
+    name: req.body.name,
     timeStart: req.body.start,
     timeEnd: req.body.end,
     date: Date.now(),
@@ -25,6 +26,18 @@ router.post("/", (req, res) => {
     .save()
     .then((shift) => res.json(shift))
     .catch((err) => console.log(err));
+});
+
+// @route POST to api/shifts
+// @desc delete a shift
+// @access Public
+router.delete("/:id", (req, res) => {
+  Shift.findById(req.params.id).then((shift) =>
+    shift
+      .remove()
+      .then(() => res.json({ success: true }))
+      .catch((err) => res.status(404).json({ success: false }))
+  );
 });
 
 module.exports = router;

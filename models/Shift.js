@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ShiftSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
   timeStart: {
     type: Number,
     required: true,
@@ -14,6 +18,7 @@ const ShiftSchema = new Schema({
   date: {
     type: Date,
     default: Date.now(),
+    required: true,
   },
 });
 
