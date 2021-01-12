@@ -20,10 +20,7 @@ const AppNavbar = (props) => {
           <NavbarBrand href="/">Roster</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
+            <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">
                   GitHub
