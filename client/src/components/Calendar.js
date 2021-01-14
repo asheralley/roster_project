@@ -37,7 +37,6 @@ const monthStartDayIndex = firstOfMonth.getDay();
 let offSetDateIndex = monthStartDayIndex - 1 < 0 ? 6 : monthStartDayIndex - 1;
 const monthStartDay = days[offSetDateIndex];
 
-console.log(offSetDateIndex);
 // week -> row
 // day that month starts on
 // how many days in month -> how many weeks
@@ -52,6 +51,7 @@ const Calendar = (props) => {
           <Col>{day}</Col>
         ))}
       </Row>
+      {}
     </Container>
   );
 };
