@@ -40,6 +40,7 @@ const monthStartDay = days[offSetDateIndex];
 // week -> row
 // day that month starts on
 // how many days in month -> how many weeks
+// easier to just build a 7x6 grid and populate with dates => then shift data
 const Calendar = (props) => {
   return (
     <Container>
