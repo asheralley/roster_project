@@ -2,6 +2,7 @@ node_modules/
 package-lock.json
 yarn.lock
 config/
+.eslintcache
 
 client/.eslintcache
 client/node_modules
