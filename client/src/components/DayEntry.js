@@ -27,6 +27,7 @@ const DayEntry = (props) => {
       date: date2,
     },
   ];
+
   return (
     <Container>
       <ListGroup>
