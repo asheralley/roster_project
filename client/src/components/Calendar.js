@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import DayEntry from "./DayEntry";
 
 const getCurrentDate = new Date();
 const currentDate = getCurrentDate.getDate();
