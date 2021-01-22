@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Container, ListGroup, ListGroupItem } from "reactstrap";
-// import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { v4 as uuidv4 } from "uuid";
 
 const DayEntry = (props) => {
@@ -28,21 +26,7 @@ const DayEntry = (props) => {
     },
   ];
 
-  return (
-    <Container>
-      <ListGroup>
-        {shiftEntries.map(({ id, name, timeStart, timeEnd, date }) => (
-          <ListGroupItem>
-            <div>{date}</div>
-            <div>{name}</div>
-            <div>
-              {timeStart} - {timeEnd}
-            </div>
-          </ListGroupItem>
-        ))}
-      </ListGroup>
-    </Container>
-  );
+  return <></>;
 };
 
 export default DayEntry;

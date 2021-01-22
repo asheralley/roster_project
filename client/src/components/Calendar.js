@@ -23,6 +23,7 @@ const currentYear = getcurrentDate.getFullYear();
 const visableDaysArray = getDateArray(currentMonth, currentYear);
 const month = getCurrentMonth(currentYear, currentMonth, currentDay);
 
+console.log(visableDaysArray);
 const Calendar = (props) => {
   return (
     <Container>
@@ -37,8 +38,13 @@ const Calendar = (props) => {
       {visableDaysArray.map((el) => {
         return (
           <Row>
-            {el.map((dayEl) => (
-              <Col>{dayEl}</Col>
+            {el.map(({ dayId, day }) => (
+              <Col id={dayId}>
+                <>
+                  {day}
+                  <DayEntry />
+                </>
+              </Col>
             ))}
           </Row>
         );

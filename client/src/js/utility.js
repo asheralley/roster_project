@@ -61,7 +61,10 @@ export function getDateArray(currMonth, currYear) {
   let dayNumber = daysInPreviousMonth - offSetDateIndex + 1;
 
   for (let i = dayNumber; i <= daysInPreviousMonth; i++) {
-    dateArray.push(dayNumber);
+    dateArray.push({
+      day: dayNumber,
+      dayId: `${previousMonthIndexOffset}${dayNumber}`,
+    });
     dayNumber++;
     if (dayNumber > daysInPreviousMonth) {
       dayNumber = 1;
@@ -70,7 +73,10 @@ export function getDateArray(currMonth, currYear) {
   }
 
   for (let i = dayNumber; i <= daysInCurrentMonth; i++) {
-    dateArray.push(dayNumber);
+    dateArray.push({
+      day: dayNumber,
+      dayId: `${currentMonthOffset}${dayNumber}`,
+    });
     dayNumber++;
     if (dayNumber > daysInCurrentMonth) {
       dayNumber = 1;
@@ -79,7 +85,10 @@ export function getDateArray(currMonth, currYear) {
   }
 
   for (let i = dayNumber; dateArray.length < 42; i++) {
-    dateArray.push(dayNumber);
+    dateArray.push({
+      day: dayNumber,
+      dayId: `${currentMonthOffset + 1}${dayNumber}`,
+    });
     dayNumber++;
   }
 
