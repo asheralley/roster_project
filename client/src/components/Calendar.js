@@ -3,9 +3,6 @@ import { Container, Row, Col } from "reactstrap";
 import { getCurrentMonth, getDateArray } from "../js/utility.js";
 import DayEntry from "./DayEntry";
 
-// const daysArrayTest = getDateArray(currentMonthIndex, currentYear);
-// const test = splitArray(daysArrayTest);
-// const currentMonth = visableDaysArray.testMonthValue;
 const days = [
   "Monday",
   "Tuesday",
@@ -17,13 +14,12 @@ const days = [
 ];
 
 const getcurrentDate = new Date();
-const currentDay = getcurrentDate.getDay();
+const currentDay = getcurrentDate.getDate();
 const currentMonth = getcurrentDate.getMonth();
 const currentYear = getcurrentDate.getFullYear();
 const visableDaysArray = getDateArray(currentMonth, currentYear);
 const month = getCurrentMonth(currentYear, currentMonth, currentDay);
 
-console.log(visableDaysArray);
 const Calendar = (props) => {
   return (
     <Container>
@@ -40,10 +36,8 @@ const Calendar = (props) => {
           <Row>
             {el.map(({ dayId, day }) => (
               <Col id={dayId}>
-                <>
-                  {day}
-                  <DayEntry />
-                </>
+                {day}
+                <DayEntry />
               </Col>
             ))}
           </Row>
