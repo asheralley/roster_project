@@ -1,8 +1,9 @@
 // utility funtions for Calendar component
+// Function to get the current month based on date passed in at execution
 export function getCurrentMonth(year, month, day) {
   const getCurrentDate = new Date(year, month, day);
   const currentMonthIndex = getCurrentDate.getMonth();
-  const currentYear = getCurrentDate.getFullYear();
+  // const currentYear = getCurrentDate.getFullYear();
   const months = [
     "January",
     "Febuary",
@@ -25,20 +26,30 @@ export function getCurrentMonth(year, month, day) {
   return currentMonth;
 }
 
+// function to generate an array of 6 'weeks' arrays with an object as each day
+// this generated from a month and a year passed in as parameters
 export function getDateArray(currMonth, currYear) {
-  function daysInMonth(month, year) {
-    return new Date(year, month, 0).getDate();
-  }
+  // variable declerations
   let dateArray = [];
   let firstOfMonth = new Date(currYear, currMonth);
   let monthStartDayIndex = firstOfMonth.getDay();
+  // working with dates is fun! -> have to offset dates as business weeks typically
+  // start on a monday not a sunday. -> day array used to get the name of days starts
+  // with a monday, thus days have to be offset as Javascript starts its week on
+  // a Sunday
   let offSetDateIndex = monthStartDayIndex - 1 < 0 ? 6 : monthStartDayIndex - 1;
+  // Also months are not zero indexed in Javascript -> awesome
   let currentMonthOffset = currMonth + 1 > 12 ? 1 : currMonth + 1;
   let previousMonthIndexOffset =
     currentMonthOffset - 1 < 0 ? 11 : currentMonthOffset - 1;
   let daysInPreviousMonth = daysInMonth(previousMonthIndexOffset, currYear);
   let daysInCurrentMonth = daysInMonth(currentMonthOffset, currYear);
   let dayNumber = daysInPreviousMonth - offSetDateIndex + 1;
+
+  // function to determine the number of days in a given month
+  function daysInMonth(month, year) {
+    return new Date(year, month, 0).getDate();
+  }
 
   for (let i = dayNumber; i <= daysInPreviousMonth; i++) {
     dateArray.push({

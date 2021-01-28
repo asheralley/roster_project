@@ -42,9 +42,6 @@ const shiftEntries = {
   },
 };
 
-// don't know the best way to get the data from "shiftEntries" into the DayEntry
-// component.
-
 const addShiftsToDaysArray = (arr) => {
   for (let week of arr) {
     for (let dayEl of week) {
