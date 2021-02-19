@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { getCurrentMonth, getDateArray } from "../js/utility.js";
 import DayEntry from "./DayEntry";
@@ -13,6 +13,7 @@ const days = [
   "Sunday",
 ];
 
+// need to convert all these to useState
 const getcurrentDate = new Date();
 const currentDay = getcurrentDate.getDate();
 const currentMonth = getcurrentDate.getMonth();
@@ -42,11 +43,11 @@ const shiftEntries = {
   },
 };
 
+// this could be abstracted to utility.js??
 const addShiftsToDaysArray = (arr) => {
   for (let week of arr) {
     for (let dayEl of week) {
       let arrayDayId = dayEl.dayId;
-      // arrayDayId.toString();
       if (shiftEntries[arrayDayId]) {
         dayEl.name = shiftEntries[arrayDayId].name;
         dayEl.timeStart = shiftEntries[arrayDayId].timeStart;

@@ -15,9 +15,8 @@ const ShiftSchema = new Schema({
     type: Number,
     required: true,
   },
-  date: {
-    type: Date,
-    default: Date.now(),
+  dateId: {
+    type: String,
     required: true,
   },
 });

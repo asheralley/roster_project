@@ -19,6 +19,7 @@ router.post("/", (req, res) => {
     name: req.body.name,
     timeStart: req.body.start,
     timeEnd: req.body.end,
+    // change this date to new dateId
     date: Date.now(),
   });
 
