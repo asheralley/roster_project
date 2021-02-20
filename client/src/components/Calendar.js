@@ -21,22 +21,22 @@ const currentYear = getcurrentDate.getFullYear();
 const visableDaysArray = getDateArray(currentMonth, currentYear);
 const month = getCurrentMonth(currentYear, currentMonth, currentDay);
 const shiftEntries = {
-  "13": {
+  "23": {
     name: "Asher",
     timeStart: 1000,
     timeEnd: 1600,
   },
-  "111": {
+  "211": {
     name: "Asher",
     timeStart: 900,
     timeEnd: 1730,
   },
-  "121": {
+  "221": {
     name: "Asher",
     timeStart: 900,
     timeEnd: 1730,
   },
-  "11": {
+  "21": {
     name: "Asher",
     timeStart: 900,
     timeEnd: 1730,
