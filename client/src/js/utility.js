@@ -44,22 +44,36 @@ export function getDateArray(currMonth, currYear) {
     currentMonthOffset - 1 < 0 ? 11 : currentMonthOffset - 1;
   let daysInPreviousMonth = daysInMonth(previousMonthIndexOffset, currYear);
   let daysInCurrentMonth = daysInMonth(currentMonthOffset, currYear);
-  let dayNumber = daysInPreviousMonth - offSetDateIndex + 1;
+  let dayNumber;
+  if (offSetDateIndex === 0) {
+    dayNumber = 1;
+  } else {
+    dayNumber = daysInPreviousMonth - offSetDateIndex + 1;
+  }
+
+  console.log(dayNumber); // -> this is 32?!! what is going on??!!
+  console.log(daysInPreviousMonth); // correct!! 31
+  console.log(daysInCurrentMonth); // correct! 28
+  console.log(offSetDateIndex); // correct!! 0
+  console.log(monthStartDayIndex); // correct!! 1
 
   // function to determine the number of days in a given month
   function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
 
-  for (let i = dayNumber; i <= daysInPreviousMonth; i++) {
-    dateArray.push({
-      day: dayNumber,
-      dayId: `${previousMonthIndexOffset}${dayNumber}`,
-    });
-    dayNumber++;
-    if (dayNumber > daysInPreviousMonth) {
-      dayNumber = 1;
-      break;
+  if (dayNumber !== 1) {
+    for (let i = dayNumber; i <= daysInPreviousMonth; i++) {
+      // console.log(dayNumber);
+      dateArray.push({
+        day: dayNumber,
+        dayId: `${previousMonthIndexOffset}${dayNumber}`,
+      });
+      dayNumber++;
+      if (dayNumber > daysInPreviousMonth) {
+        dayNumber = 1;
+        break;
+      }
     }
   }
 
