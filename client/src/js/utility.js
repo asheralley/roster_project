@@ -1,5 +1,6 @@
 // utility funtions for Calendar component
 // Function to get the current month based on date passed in at execution
+// May need to think about making this a custom hook -> useDate?
 export function getCurrentMonth(year, month, day) {
   const getCurrentDate = new Date(year, month, day);
   const currentMonthIndex = getCurrentDate.getMonth();
