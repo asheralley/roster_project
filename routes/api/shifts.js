@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
     timeStart: req.body.start,
     timeEnd: req.body.end,
     // change this date to new dateId
-    date: Date.now(),
+    date: req.body.id,
   });
 
   newShift
