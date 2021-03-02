@@ -107,6 +107,7 @@ export function monthObject(year, month, day) {
     return dateArray;
   }
 
+  // may need to convert this to class declaration?
   function Month(name, visableDays) {
     this.name = name;
     this.visableDays = visableDays;
