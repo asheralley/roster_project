@@ -35,6 +35,11 @@ const shiftEntries = {
     timeStart: 900,
     timeEnd: 1730,
   },
+  "3262021": {
+    name: "Asher",
+    timeStart: 900,
+    timeEnd: 1730,
+  },
 };
 
 // this could be abstracted to utility.js??

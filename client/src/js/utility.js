@@ -89,7 +89,7 @@ export function monthObject(year, month, day) {
     for (let i = dayNumber; dateArray.length < 42; i++) {
       dateArray.push({
         day: dayNumber,
-        dayId: `${currentMonthOffset}${dayNumber}${year}`,
+        dayId: `${currentMonthOffset + 1}${dayNumber}${year}`,
       });
       dayNumber++;
     }
