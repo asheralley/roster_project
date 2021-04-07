@@ -1,0 +1,7 @@
+TODO
+
+Implement Redux
+Cache results for better performance
+Just display current/prev/next months
+Display current day
+Plugin backend -> look at data schema
