@@ -39,6 +39,10 @@ export function monthObject(year, month, day) {
     // start on a monday not a sunday. -> day array used to get the name of days starts
     // with a monday, thus days have to be offset as Javascript starts its week on
     // a Sunday
+    // ************************************************
+    // May be able to simplify this as it may be easier to work with a Sunday first
+    // array
+    // ************************************************
     let offSetDateIndex =
       monthStartDayIndex - 1 < 0 ? 6 : monthStartDayIndex - 1;
     let currentMonthOffset = month + 1 > 12 ? 1 : month + 1;
@@ -59,9 +63,12 @@ export function monthObject(year, month, day) {
       return new Date(y, m, 0).getDate();
     }
 
+    // ************************************************
+    // All this is messy -> needs a refactor
+    // consdier not using objects for days
+    // separate calendar from day entry logic
     if (dayNumber !== 1) {
       for (let i = dayNumber; i <= daysInPreviousMonth; i++) {
-        // console.log(dayNumber);
         dateArray.push({
           day: dayNumber,
           dayId: `${currentMonthOffset}${dayNumber}${year}`,
@@ -93,6 +100,7 @@ export function monthObject(year, month, day) {
       });
       dayNumber++;
     }
+    // ************************************************
 
     function splitArray(array) {
       let arrayOfArrays = [];
@@ -103,7 +111,7 @@ export function monthObject(year, month, day) {
       return arrayOfArrays;
     }
 
-    dateArray = splitArray(dateArray);
+    // dateArray = splitArray(dateArray);
     return dateArray;
   }
 

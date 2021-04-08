@@ -44,15 +44,16 @@ const shiftEntries = {
 
 // this could be abstracted to utility.js??
 const addShiftsToDaysArray = (arr) => {
-  for (let week of arr) {
-    for (let day of week) {
-      let arrayDayId = day.dayId;
-      if (shiftEntries[arrayDayId]) {
-        day.name = shiftEntries[arrayDayId].name;
-        day.timeStart = shiftEntries[arrayDayId].timeStart;
-        day.timeEnd = shiftEntries[arrayDayId].timeEnd;
-      }
+  // for (let week of arr) {
+  for (let day of arr) {
+    // for (let day of week) {
+    let arrayDayId = day.dayId;
+    if (shiftEntries[arrayDayId]) {
+      day.name = shiftEntries[arrayDayId].name;
+      day.timeStart = shiftEntries[arrayDayId].timeStart;
+      day.timeEnd = shiftEntries[arrayDayId].timeEnd;
     }
+    // }
   }
 };
 
