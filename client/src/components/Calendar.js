@@ -59,7 +59,7 @@ const addShiftsToDaysArray = (arr) => {
 
 const Calendar = (props) => {
   // need to convert all these to useState
-  const [currentDay, setCurrentDay] = useState(getcurrentDate.getDate());
+  const currentDay = getcurrentDate.getDate();
   const [currentMonth, setCurrentMonth] = useState(getcurrentDate.getMonth());
   const [currentYear, setCurrentYear] = useState(getcurrentDate.getFullYear());
 
@@ -83,7 +83,7 @@ const Calendar = (props) => {
 
   const displayMonth = monthObject(currentYear, currentMonth, currentDay);
 
-  addShiftsToDaysArray(displayMonth.visableDays);
+  // addShiftsToDaysArray(displayMonth.visableDays);
 
   return (
     <>
